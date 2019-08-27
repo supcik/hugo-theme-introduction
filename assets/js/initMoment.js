@@ -1,11 +1,14 @@
 $(document).ready(function() {
-    var update_localtime = function(){
+    const tnode = $("#time")
+    const update_localtime = function(){
         var time = moment()
-            .tz("{{ or .Site.Params.timeZone .Site.Params.home.timeZone }}")
-            .format("{{ or .Site.Params.timeFormat .Site.Params.home.timeFormat }}");
-        $("#time").html(time);
+            .tz(tnode.attr("data-time-zone"))
+            .format(tnode.attr("data-time-format"));
+        tnode.html(time);
     }
     update_localtime();
-    {{if .Site.Params.timeUpdate }} setInterval(update_localtime, 1000); {{end}}
-    
+    const refresh = Number(tnode.attr("data-refresh"))
+    if (refresh > 0) {
+        setInterval(update_localtime, refresh);
+    }    
 })

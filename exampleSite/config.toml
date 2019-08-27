@@ -13,6 +13,7 @@ DefaultContentLanguage           = "en"                    # Default language fo
     dateFormat                   = "Jan 2, 2006"
     timeZone                     = "America/Los_Angeles"   # Your timezone as in the TZ* column of this list: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
     timeFormat                   = "h:mm A"                # https://momentjs.com/docs/#/displaying/format/
+    timeRefresh                  = 1000
     email                        = "youremail@email.com"   # E-mail address for contact section
     # customCSS                    = ["foo.css"]             # Include custom css files placed under assets/
 
